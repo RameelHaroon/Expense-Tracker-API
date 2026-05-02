@@ -1,5 +1,6 @@
-package com.example.Expense_Tracker_API.AuthService.entity;
+package com.example.Expense_Tracker_API.AuthService.security;
 
+import com.example.Expense_Tracker_API.AuthService.entity.User;
 import com.example.Expense_Tracker_API.AuthService.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
