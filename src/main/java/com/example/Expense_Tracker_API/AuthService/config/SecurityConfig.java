@@ -1,5 +1,6 @@
 package com.example.Expense_Tracker_API.AuthService.config;
 
+import com.example.Expense_Tracker_API.AuthService.controller.AuthController;
 import com.example.Expense_Tracker_API.AuthService.security.JwtAuthenticationFilter;
 import com.example.Expense_Tracker_API.AuthService.security.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -48,7 +49,10 @@ public class SecurityConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/register", "/auth/login").permitAll()
+                        .requestMatchers(
+                                AuthController.BASE_URL + AuthController.V1_AUTH_REGISTER,
+                                AuthController.BASE_URL + AuthController.V1_AUTH_LOGIN
+                        ).permitAll()
                         .anyRequest().authenticated()
                 ).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 

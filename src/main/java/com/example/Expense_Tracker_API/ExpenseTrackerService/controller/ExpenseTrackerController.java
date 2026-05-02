@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExpenseTrackerController {
     public static final String BASE_URL = "api/expenseTrackerService";
     public static final String V1_TASK = "/v1/expense";
-    public static final String V1_CUSTOMER_ID = V1_TASK + "/{expenseId}";
+    public static final String V1_EXPENSE_ID = V1_TASK + "/{expenseId}";
 
     @GetMapping(V1_TASK)
     public String getTasks(Authentication authentication) {
