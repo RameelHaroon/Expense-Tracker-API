@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS users;
+
+
+-- USERS TABLE
+CREATE TABLE users (
+    id UUID not null PRIMARY KEY,
+
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+
+    version bigint,
+
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
