@@ -1,6 +1,7 @@
 package com.example.Expense_Tracker_API.AuthService.controller;
 
 import com.example.Expense_Tracker_API.AuthService.dto.AuthResponse;
+import com.example.Expense_Tracker_API.AuthService.dto.LoginRequest;
 import com.example.Expense_Tracker_API.AuthService.dto.RegisterRequest;
 import com.example.Expense_Tracker_API.AuthService.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,10 @@ public class AuthController {
     @PostMapping(V1_AUTH_REGISTER)
     public AuthResponse register(@RequestBody RegisterRequest request) {
         return authService.register(request);
+    }
+
+    @PostMapping(V1_AUTH_LOGIN)
+    public AuthResponse login(@RequestBody LoginRequest request) {
+        return authService.login(request);
     }
 }
