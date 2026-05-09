@@ -1,6 +1,8 @@
 services:
 
   app:
+    # image: yourusername/expense-tracker-api:1.0   # ← pull from registry, for someone else
+    # build: .                                    # ← remove or comment out
     build: .
     container_name: expense-tracker-app
     ports:
